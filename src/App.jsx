@@ -6,7 +6,7 @@ function get(){
   const loc =["USA","UK","AUSTRALIA","AFRICA"];
   const post=["Developer","Designer","Tester","Manager"];
   const log=["https://i.pinimg.com/736x/60/6b/c0/606bc0717982547e555a514b479365a0.jpg","https://i.pinimg.com/1200x/d5/63/7c/d5637cf25d7d2a6d4a9cfb08f7756032.jpg","https://i.pinimg.com/1200x/ee/09/d6/ee09d6206b97811e57fbee835f294058.jpg","https://i.pinimg.com/1200x/72/51/24/7251240a4197b21361c5742e0ee8885d.jpg"];
-   const index=(Math.floor(Math.random()*names.length));
+   const index=Math.floor(Math.random()*names.length);
   return{
     name:names[index],
     salary:Math.floor(Math.random()*100)+"K",
@@ -19,11 +19,11 @@ function get(){
 }
 
 function App() {
-  const brr=[get(),get(),get(),get(),get(),get(),get(),get(),get(),get(),get()];
+  const brr=[get(),get(),get(),get(),get(),get(),get(),get(),get(),get(),get(),get()];
   return (
   <div className='parent'>
 {
-  brr.map((elem,i,arr)=>{
+  brr.map((elem)=>{
     return <Cards name={elem.name} salary={elem.salary} date={elem.date} perhour={elem.perhour} location={elem.location} post={elem.post} logo={elem.logo} />;
   })
 }
